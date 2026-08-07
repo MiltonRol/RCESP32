@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control ESP32</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🤖 Control Robot ESP32</h1>
+        <div class="status" id="status">
+            <span class="status-dot"></span>
+            <span class="status-text">Conectando...</span>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Sección de Cámara -->
+        <section class="camera-section">
+            <h2>📹 Cámara en Vivo</h2>
+            <div class="video-wrapper">
+                <div class="video-placeholder" id="videoPlaceholder">
+                    Cargando cámara...
+                </div>
+                <iframe 
+                    id="cameraFrame"
+                    src="" 
+                    frameborder="0"
+                    allow="camera"
+                    style="display: none;">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Sección de Control -->
+        <section class="control-section">
+            <h2>🎮 Control de Movimiento</h2>
+            <p class="hint">Usa las teclas <strong>W A S D</strong> o los botones</p>
+            
+            <!-- Cruceta de Control (Grid 3x3) -->
+            <div class="dpad">
+                <button class="btn-up" data-dir="forward" aria-label="Adelante">
+                    ▲
+                </button>
+                <button class="btn-left" data-dir="left" aria-label="Izquierda">
+                    ◀
+                </button>
+                <button class="btn-center" data-dir="stop" aria-label="Parar">
+                    ■
+                </button>
+                <button class="btn-right" data-dir="right" aria-label="Derecha">
+                    ▶
+                </button>
+                <button class="btn-down" data-dir="backward" aria-label="Atrás">
+                    ▼
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Sección de Sensores -->
+        <section class="sensors-section">
+            <h2>📊 Sensores</h2>
+            <div class="sensor-grid">
+                <div class="sensor-card">
+                    <span class="sensor-icon">🔋</span>
+                    <span class="sensor-label">Batería</span>
+                    <span class="sensor-value" id="batValue">--</span>
+                    <span class="sensor-unit">V</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Sistema IoT v1.0 | <span id="deviceInfo">ESP32-001</span></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js" type="module"></script>
+</body>
+</html>
