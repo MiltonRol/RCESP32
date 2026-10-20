@@ -141,7 +141,7 @@ flowchart TD
     G5 -- Sí --> G6[v = 0]
     G5 -- No --> G7["v = RT − LT"]
     G6 --> G8
-    G7 --> G8{¿Freno, |v|>0.05 o d≠0?}
+    G7 --> G8{¿Freno, v>0.05 o d≠0?}
     G8 -- Sí --> G9[active = true]
     G8 -- No --> G10[active = false]
 ```
